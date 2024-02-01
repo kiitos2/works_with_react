@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var msg = ""; // 믄자열 형식의 변수 초기화
+            for(var i=0; i<=10; i++) {
+                if(i == 3) continue; // 숫자 3을 만나면 아래 내용을 생략하고 다시 위로 건너뜀.
+                msg += i + "<br />"; // 정수가 문자열 타입의 변수에 누적 되면서 자동 형변환이 일어남.
+            } document.write(msg);
+        </script>
+    </body>
+</html>
