@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+        // 객체 상수(object literal)를 사용하여 객체 생성
+            var myCar = {
+                model: "520d",
+                speed: 60,
+                color: "red",
+                brake: function() {this.speed -= 10;},
+                accel: function() {this.speed += 10;}
+            };
+            myCar.color = "yellow";
+            myCar.brake(); // 단점: 방법은 간단하지만 객체 하나만 생성이 가능하며. 추가로 객체를 생성하려면 동일한 코드가 반복적이어야 한다.
+        </script>
+
+        <script>
+            // 사용자 정의 객체 (생성자 함수를 이용한 객체 생성)
+            // new 연산자가 객체를 생성하고 생성자(constructor)가 객체를 초기화
+            // 장점: 개발자가 원하는 개수만큼 객체를 쉽게 만들 수 있음.
+            // (※내장 객체는 미리 생성자 함수가 정의돼 있어서 생성자 작성 없이 new하고 객체를 생성한다.)
+            // 객체 안의 속성과 메서드는 객체 멤버로 점(.) 연산자를 통해서만 접근할 수 있다.
+            function Car(model, speed, color) {
+                this.model = model;
+                this.speed = speed;
+                this.color = color;
+                this.brake = function() {
+                    this.speed -= 10;
+                }
+                this.accel = function() {
+                    this.speed += 10;
+                }
+            }
+            var myCar = new Car("520d", 60, "white");
+            myCar.color = "yellow";
+            myCar.brake();
+
+            // 위의 객체에 새로운 메서드를 추가
+            myCar.showModel = function(){
+                alert("모델은 " + this.model + "입니다.");
+            }
+        </script>
+    </body>
+</html>

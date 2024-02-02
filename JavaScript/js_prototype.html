@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <!-- 프로토타입을 통하여 여러 객체가 공유하는 메서드를 정의 
+            (필요한 이유: 객체가 생성될 때마다 객체당 똑같은 메서드도 
+            생성되면서 메모리를 비효율적으로 낭비하기 때문이다.)-->
+        <script>
+            function Point(xpos, ypos) {
+                this.x = xpos;
+                this.y = ypos;
+            }
+            Point.prototype.getDistance = function(p) {
+                return Math.sqrt(this.x * this.x + this.y * this.y);
+            } // => 모든 Point 객체가 공유하는 메서드
+            
+            var p1 = new Point(10 ,20);
+            var d1 = p1.getDistance();
+            var p2 = new Point(10, 30);
+            var d2 = p2.getDistance();
+
+            document.write(d1 + "<br />")
+            document.write(d2 + "<br />")
+        </script>    
+    </body>
+</html>
