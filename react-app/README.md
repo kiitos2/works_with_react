@@ -43,7 +43,7 @@ props => 함수(컴포넌트)의 매개변수
 const로 변수 선언 => 나중에 변수의 값을 변경 못 하게 하려고.. (상수 역할)
 
 
-# <Nav topics={topics}></Nav>
+# &lt;Nav topics={topics}&gt;&lt;/Nav&gt;
 <Nav> 태그의 props로 여러 개의 객체들이 담은 배열의 값이 저장된 topics변수를 전달. (왼쪽 topics가 복제품인 객체가 됨.)
 
 <Nav topics='topics'></Nav> => 단순한 문자열로 전달
