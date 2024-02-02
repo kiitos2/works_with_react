@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+React 기초: 설치 수정 배포
+1. 설치
+- Create React App 공식 홈페이지에서 설치 방법을 참고 (https://create-react-app.dev/).
+- Node.js를 설치 (공홈에서 설치 설치 파일 다운로드).
+- 터미널에서 npx create-react-app 입력하고 이어서 디렉터리 이름을 입력.
+	=> npx create-react-app .
+	여기서 점(.)은 현재 디렉터리를 의미하는 약속된 기호이다.
+- npm start 입력하면 웹 브라우저가 나오면서 설치가 완료된다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. 수정
+- npm start 명령어를 실행하면 Create React App 도구는 index.js(입구 파일)를 찾고, 이 안의 코드대로 동작하게 된다. 그중에서 <App />태그는 UI 전체를 보여주는 태그이다. <App /> 태그는 App.js에서 온 것이다. App.js 안의 App 함수의 코드를 수정하면서 전체 UI를 디자인할 수 있다.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. 배포
+- npm run build 명령어를 터미널에 입력하여 빌드를 시작.
+   (이때 build 폴더가 생성되고 index.html 파일을 의존하는 다른 파일들도 존재하게 된다.)
+- 다시 npm run build 명령어를 입력.
+- serve -s build 명령어 입력.
+   (이 serve는 Node.js 기반의 웹 서버이며, 가지고 있는 옵션 중에 -s 옵션을 추가하면 사용자가 들어오는 경로 상관없이, index.html 파일을  서비스하게 해준다. 그리고  build 폴더 지정을 하여 해당 폴더 안의 index.html 파일을 서비스 실행한다.)
+- 접속할 수 있는 주소 클릭하면, 실제 서비스된 배포판을 웹 브라우저를 통해 볼 수 있다.
