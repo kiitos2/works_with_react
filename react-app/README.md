@@ -44,24 +44,24 @@ const로 변수 선언 => 나중에 변수의 값을 변경 못 하게 하려고
 
 
 # &lt;Nav topics={topics}&gt;&lt;/Nav&gt;
-<Nav> 태그의 props로 여러 개의 객체들이 담은 배열의 값이 저장된 topics변수를 전달. (왼쪽 topics가 복제품인 객체가 됨.)
+&lt;Nav&gt; 태그의 props로 여러 개의 객체들이 담은 배열의 값이 저장된 topics변수를 전달. (왼쪽 topics가 복제품인 객체가 됨.)
 
-<Nav topics='topics'></Nav> => 단순한 문자열로 전달
+&lt;Nav topics='topics'&gt;&lt;/Nav&gt; => 단순한 문자열로 전달
 -> 문자열이 아닌 배열 안의 데이터를 있는 그대로 전달하려면 중괄호로 감싸야 한다.
 
 
 # props.topics
 for(let i=0; i<props.topics.length; i++) ...
-=> 아래 <Nav>태그의 왼쪽 topics가 배열객체로 올라옴.
+=> 아래 &lt;Nav&gt;태그의 왼쪽 topics가 배열객체로 올라옴.
 
 let t = props.topics[i]; 
 => 인덱스 0부터 원소의 크기만큼 반복적으로 배열의 객체 값을 저장.
-    lis.push(<li key={t.id}><a href={'/read/'+ t.id}>{t.title}</a></li>);
+    lis.push(&lt;li key={t.id}&gt;&lt;a href={'/read/'+ t.id}&gt;{t.title}&lt;/a&gt;&lt;/li&gt;);
 => 배열에서 꺼내온 값을 출력.
-결과적으로 <li><a href="/read/1">html</a></li> 코드를 원소의 횟수만큼 반복함.
+결과적으로 &lt;li&gt;&lt;a href="/read/1"&gt;html&lt;/a&gt;&lt;/li&gt; 코드를 원소의 횟수만큼 반복함.
 
-# lis.push(<li key={t.id}> ...
+# lis.push(&lt;li key={t.id}&gt; ...
 Each child in a list should have a unique "key" prop. 라는
 오류 메시지를 콘솔에서 확인하였음.
-이는 동적으로 만든 각각의 <li>태그는 key라는 props를 가지고 있어야 하고, key라는 props의 값은 반복문 안에서 고유해야 한다고 하는 내용이다. 참고로 key 값은 애플리케이션 전체가 아니라 반복문 내에서만 고유하면 된다.
+이는 동적으로 만든 각각의 &lt;li&gt;태그는 key라는 props를 가지고 있어야 하고, key라는 props의 값은 반복문 안에서 고유해야 한다고 하는 내용이다. 참고로 key 값은 애플리케이션 전체가 아니라 반복문 내에서만 고유하면 된다.
 자동으로 생성하는 태그의 경우 리액트가 태그들을 추적하기 위해서 근거가 필요하고, 그 근거로써 key라는 약속된 prop을 부여한다고 이해하면 될 것 같다.
