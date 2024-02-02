@@ -1,23 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App() { // 화면을 구성한는 함수, 파일의 내용을 편집해 가면서 UI를 만든다.
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Hello, React!
     </div>
   );
 }

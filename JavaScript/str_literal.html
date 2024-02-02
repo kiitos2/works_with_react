@@ -1,7 +1,10 @@
 <script>
-    var sLiteral = "문자열 리터럴";
+    // 자바스크립트의 2가지 종류의 문자열
+    var sLiteral = "문자열 리터럴"; 
+    // 자바스크립트가 임시적으로 문자열 상수를 문자열 객체로 형변환을 하기 때문에
+    // 문자열 리터럴도 String 객체의 모든 속성과 메서드를 사용할 수 있음.
     sObject = new String("문자열 객체");
 
-    document.writeln(typeof (sLiteral) + "<br />");
-    document.writeln(typeof (sObject) + "<br />");
+    document.writeln(typeof (sLiteral) + "<br />"); // string
+    document.writeln(typeof (sObject) + "<br />"); // object
 </script>
