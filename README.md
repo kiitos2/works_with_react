@@ -96,13 +96,10 @@ onChnageMode={() => {
 }}
 
 
-# onClick={event=>{ 
-#&nbsp;&nbsp;&nbsp;&nbsp;event.preventDefault();
-#&nbsp;&nbsp;&nbsp;&nbsp;props.onChnageMode(event.target.id);
-#&nbsp;&nbsp;}}
+# onClick={event=>{ event.preventDefault(); props.onChnageMode(event.target.id); }}
 - 파라미터가 (event) 하나일 때는 괄호 생략이 가능하다
 - onChangeMode는 id 값이 필요하므로 함수를 호출할 때 id 값을 주입해야 한다.
 
-- event.target -> target은 이벤트를 유발한 태그 <a> 태그를 가리킨다.
+- event.target -> target은 이벤트를 유발한 태그 &lt;a&gt; 태그를 가리킨다.
 (event.target.id 이벤트를 유발한 태그가 가지고 있는 id 값이다.)
 
