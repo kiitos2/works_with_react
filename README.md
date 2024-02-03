@@ -68,12 +68,12 @@ Each child in a list should have a unique "key" prop. 라는
 
 # 이벤트
 event.preventDefault();
-=> <a> 태그의 기본 동작 방지 (페이지 이동 X)
+=> &lt;a&gt; 태그의 기본 동작 방지 (페이지 이동 X)
 
 props.onChnageMode();
-=> <Header>에 props로 전달된 onChangeMode의 함수를 호출
+=> &lt;Header&gt;에 props로 전달된 onChangeMode의 함수를 호출
 
-<a> 태그는 순수한 HTML과 똑같지 않고, 유사 HTML이다. Header 컴포넌트 함수 안에 코드를 작성하면 리액트 개발 환경이 최종적으로 브라우저가 이해할 수 있는 HTML로 변환하기 때문이다.
+&lt;a&gt; 태그는 순수한 HTML과 똑같지 않고, 유사 HTML이다. Header 컴포넌트 함수 안에 코드를 작성하면 리액트 개발 환경이 최종적으로 브라우저가 이해할 수 있는 HTML로 변환하기 때문이다.
 
 
 # onClick={function(event)}
@@ -83,23 +83,23 @@ onClick 이벤트에 콜백 함수로 들어간 함수가 호출될 때 리액�
 # 화살표 함수로 이벤트 축약하기
 <a href="/" onClick={function(event){
      event.preventDefault(); 
-    }}>
+    }}><br />
  <a href="/" onClick={(event)=>{
      event.preventDefault();
-     }}>
-
+     }}><br />
+<br />
 onChnageMode={function() {
   alert('Header');
-}}
+}}<br />
 onChnageMode={() => {
   alert('Header');
 }}
 
 
 # onClick={event=>{ 
-#      event.preventDefault();
-#      props.onChnageMode(event.target.id);
-#    }}
+#&nbsp;&nbsp;&nbsp;&nbsp;event.preventDefault();
+#&nbsp;&nbsp;&nbsp;&nbsp;props.onChnageMode(event.target.id);
+#&nbsp;&nbsp;}}
 - 파라미터가 (event) 하나일 때는 괄호 생략이 가능하다
 - onChangeMode는 id 값이 필요하므로 함수를 호출할 때 id 값을 주입해야 한다.
 
