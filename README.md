@@ -65,3 +65,41 @@ Each child in a list should have a unique "key" prop. 라는
 오류 메시지를 콘솔에서 확인하였음.
 이는 동적으로 만든 각각의 &lt;li&gt;태그는 key라는 props를 가지고 있어야 하고, key라는 props의 값은 반복문 안에서 고유해야 한다고 하는 내용이다. 참고로 key 값은 애플리케이션 전체가 아니라 반복문 내에서만 고유하면 된다.
 자동으로 생성하는 태그의 경우 리액트가 태그들을 추적하기 위해서 근거가 필요하고, 그 근거로써 key라는 약속된 prop을 부여한다고 이해하면 될 것 같다.
+
+# 이벤트
+event.preventDefault();
+=> &lt;a&gt; 태그의 기본 동작 방지 (페이지 이동 X)
+
+props.onChnageMode();
+=> &lt;Header&gt;에 props로 전달된 onChangeMode의 함수를 호출
+
+&lt;a&gt; 태그는 순수한 HTML과 똑같지 않고, 유사 HTML이다. Header 컴포넌트 함수 안에 코드를 작성하면 리액트 개발 환경이 최종적으로 브라우저가 이해할 수 있는 HTML로 변환하기 때문이다.
+
+
+# onClick={function(event)}
+onClick 이벤트에 콜백 함수로 들어간 함수가 호출될 때 리액트는 event 객체를 첫 번째 파라미터로 주입한다. 이 이벤트 객체는 이벤트 상황을 제어할 수 있는 여러 가지 정보와 기능이 들어가 있다.
+
+
+# 화살표 함수로 이벤트 축약하기
+<a href="/" onClick={function(event){
+     event.preventDefault(); 
+    }}><br />
+ <a href="/" onClick={(event)=>{
+     event.preventDefault();
+     }}><br />
+<br />
+onChnageMode={function() {
+  alert('Header');
+}}<br />
+onChnageMode={() => {
+  alert('Header');
+}}
+
+
+# onClick={event=>{ event.preventDefault(); props.onChnageMode(event.target.id); }}
+- 파라미터가 (event) 하나일 때는 괄호 생략이 가능하다
+- onChangeMode는 id 값이 필요하므로 함수를 호출할 때 id 값을 주입해야 한다.
+
+- event.target -> target은 이벤트를 유발한 태그 &lt;a&gt; 태그를 가리킨다.
+(event.target.id 이벤트를 유발한 태그가 가지고 있는 id 값이다.)
+
