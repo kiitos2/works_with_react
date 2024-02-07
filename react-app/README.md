@@ -20,7 +20,7 @@
 
 
 
-### **게시글 내용 수정하기**
+### **게시글 내용이 수정된 모습**
 ![5](https://github.com/kiitos2/works_with_react/assets/92902244/801b81bc-d006-44ae-98da-a7d751d3854f)
 
 
