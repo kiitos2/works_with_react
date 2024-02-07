@@ -24,7 +24,7 @@
 
 
 
-5.  ### **제목과 내용을 수정하고 Update 버튼을 클릭하면 상세 보기 페이지로 이동한 모습 **
+5.  ### **제목과 내용을 수정하고 Update 버튼을 클릭하면 상세 보기 페이지로 이동한 모습**
 
 ![5](https://github.com/kiitos2/works_with_react/assets/92902244/801b81bc-d006-44ae-98da-a7d751d3854f)
 
